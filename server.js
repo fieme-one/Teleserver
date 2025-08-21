@@ -8,12 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
+const SUPABASE_URL = "https://twqiguaoperbqdzevzes.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3cWlndWFvcGVyYnFkemV2emVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3NTUwNDQsImV4cCI6MjA3MTMzMTA0NH0.hCXJ-TLFPfKn8ueHO-GPtKi1DZatdmkxN1RhRdlXCAA";
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const BOT_TOKEN = "7149110709:AAG055wFsqCPhzhEE2ONa3bT8Nt_LUieteg";
 
 function checkTelegramAuth(data) {
     const { hash, ...userData } = data;
