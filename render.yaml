@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: telegram-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: SUPABASE_URL
+        fromSecret: SUPABASE_URL
+      - key: SUPABASE_KEY
+        fromSecret: SUPABASE_KEY
+      - key: BOT_TOKEN
+        fromSecret: BOT_TOKEN
