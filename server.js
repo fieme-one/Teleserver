@@ -60,3 +60,5 @@ app.post('/telegram-login', async (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
     console.log('Telegram login backend running...');
 });
+app.get("/", (req, res) => {
+  res.send("Backend is working! dont worry");
